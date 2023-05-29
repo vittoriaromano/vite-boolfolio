@@ -35,7 +35,7 @@ export default{
 <template>
     <main>
         <div class="container">
-            <div class="row m-4 gy-4">
+            <div class="row p-4 gy-4">
                 <div class="col col-md-4" v-for="project in projects">
                     <ProjectCard :project="project"></ProjectCard>
                 </div>     
@@ -47,7 +47,9 @@ export default{
 
 
 <style lang="scss" scoped>
-
+main{
+  background: linear-gradient(rgb(168, 216, 234), rgb(255, 255, 210)), url(../images/cover2.jpg);
+}
 #card{
     height: 300px;
 }

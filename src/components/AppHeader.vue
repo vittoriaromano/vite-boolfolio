@@ -1,13 +1,16 @@
 <template>
     <header>
-        <div class="container-fluid d-flex justify-content-between">
-            <h1 class="display-5 fw-bold text-center"> Welcome </h1>
-            <ul class="d-flex m-3">
-                <li><router-link :to="{ name: 'home' }" class="nav-link">Home</router-link></li>
-                <li><router-link :to="{ name: 'projects' }" class="nav-link">Projects</router-link></li>
-            </ul>
-        </div>
-
+        <nav class="navbar navbar-expand-lg shadow py-3 sticky-top" id="nav">
+            <div class="container">
+                <h1>Welcome</h1>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><router-link :to="{ name: 'home' }" class="nav-link">Home</router-link></li>
+                        <li class="nav-item"><router-link :to="{ name: 'projects' }" class="nav-link">Projects</router-link></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 </template>
 
@@ -17,6 +20,24 @@ export default{
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+h1 {
+    font-weight: 600;
+    color: whitesmoke;
+}
+a {
+    color: #6eb2cb;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+a:hover {
+    color: #FFFFD2;
+}
+#nav{
+    background-color: #A8D8EA;
+}
+.navbar-nav .nav-link.active {
+    color: #FFFFD2;
+}
 
 </style>
