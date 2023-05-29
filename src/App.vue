@@ -1,7 +1,5 @@
 <script>
-import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default {
@@ -17,22 +15,9 @@ export default {
   },
   components: {
     AppHeader,
-    AppMain,
     AppFooter
   },
-  methods:{
-    getProject(){
-      axios.get(this.apiBaseUrl + this.apiUrls.projects).then((response)=>{
-        this.projects = response.data.results;
-      }).catch((error)=>{
-        console.log(error);
-      })
-    }
-
-  },
-  created() {
-    this.getProject();
-  }
+  
 }
 </script>
 
