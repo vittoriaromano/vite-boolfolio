@@ -11,16 +11,24 @@ export default {
     <div class="card" id="card">
         <img v-if="project.project_image" :src="project.image" class="card-img-top" :alt="project.project_name"> 
         <div class="card-body">
-        <h5 class="card-title">{{ project.id  + ' ' + project.project_name}}</h5>
-        <p class="card-text">{{ project.description }}</p>
-        <p class="card-text">VERSION:{{ project.version }}</p>
-        <p class="card-text">START DATE:{{ project.start_date }}</p>
-        <p class="card-text">UPLOAD DATE:{{ project.upload_date }}</p>
-        <p class="card-text">VALUE:{{ project.value + '$'}}</p>
+            <h5 class="card-title">{{ project.id  + ' ' + project.project_name}}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <p class="card-text">VERSION:{{ project.version }}</p>
+            <p class="card-text">START DATE:{{ project.start_date }}</p>
+            <p class="card-text">UPLOAD DATE:{{ project.upload_date }}</p>
+            <p class="card-text">VALUE:{{ project.value + '$'}}</p>
+            <button type="button" class="btn btn-info">
+                <router-link :to="{ name: 'showProject', params: { id: project.id } }">
+                    Show More
+                </router-link> 
+            </button> 
         </div>
+        
     </div>
 </template>
 
-<style lang="scss" scoped>
-
+<style scoped>
+#card{
+    min-height: 400px;
+}
 </style>
