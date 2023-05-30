@@ -17,11 +17,9 @@ export default {
             <p class="card-text">START DATE:{{ project.start_date }}</p>
             <p class="card-text">UPLOAD DATE:{{ project.upload_date }}</p>
             <p class="card-text">VALUE:{{ project.value + '$'}}</p>
-            <button type="button" class="btn btn-info">
-                <router-link :to="{ name: 'showProject', params: { id: project.id } }">
+            <router-link :to="{ name: 'project', params: { slug: project.slug }}" class="btn btn-info">
                     Show More
-                </router-link> 
-            </button> 
+            </router-link> 
         </div>
         
     </div>

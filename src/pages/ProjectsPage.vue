@@ -9,15 +9,15 @@ export default{
     },
     data() {
         return {
-        apiBaseUrl: 'http://127.0.0.1:8000/api/',
+        apiBaseUrl: 'http://127.0.0.1:8000/api',
         apiUrls: {
-            projects: 'projects'
+            projects: '/projects'
         },
         projects: []
         }
   },
   methods: {
-    getProject(){
+    getProjects(){
       axios.get(this.apiBaseUrl + this.apiUrls.projects).then((response)=>{
         this.projects = response.data.results;
         console.log(response.data);
@@ -27,7 +27,7 @@ export default{
     }
   },
   created() {
-    this.getProject();
+    this.getProjects();
   }
 }
 </script>
@@ -48,7 +48,7 @@ export default{
 
 <style lang="scss" scoped>
 main{
-  background: linear-gradient(rgb(168, 216, 234), rgb(255, 255, 210)), url(../images/cover2.jpg);
+  background: linear-gradient(rgb(168, 216, 234), rgb(255, 255, 210));
 }
 #card{
     height: 300px;
